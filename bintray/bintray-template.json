@@ -1,0 +1,17 @@
+{
+  "package": {
+    "name": "BINTRAY_PACKAGE_NAME",
+    "repo": "BINTRAY_REPO",
+    "subject": "BINTRAY_ORG"
+  },
+  "version": {
+    "name": "VERSION"
+  },
+  "files": [
+    {
+      "includePattern": "BINTRAY_INCLUDE_PATTERN",
+      "uploadPattern": "BINTRAY_UPLOAD_PATTERN"
+    }
+  ],
+  "publish": true
+}
