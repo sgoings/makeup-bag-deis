@@ -5,8 +5,8 @@
 #		- LDFLAGS
 
 DOCKER_DEV_BIN_DIR ?= bin
-DOCKER_DEV_MAIN ?= main.go
-DOCKER_DEV_BIN_NAME ?= $(PROJECT_NAME)
+DOCKER_DEV_MAIN ?= boot.go
+DOCKER_DEV_BIN_NAME ?= boot
 DOCKER_DEV_SRC_PACKAGES ?= "./..."
 
 DOCKER_DEV_CGO_ENABLED ?= 0
@@ -20,7 +20,7 @@ docker-go-bootstrap:
 	${DOCKER_DEV_CMD} glide install
 
 docker-go-build:
-	${DOCKER_DEV_CMD} go build -a -installsuffix cgo -ldflags ${LDFLAGS} -o ${BINARY_DEST_DIR}/boot boot.go
+	${DOCKER_DEV_CMD} go build -a -installsuffix cgo -ldflags ${LDFLAGS} -o ${BINARY_DEST_DIR}/${DOCKER_DEV_BIN_NAME} ${DOCKER_DEV_MAIN}
 
 docker-go-test:
 	${DOCKER_DEV_CMD} go test $(glide nv)
