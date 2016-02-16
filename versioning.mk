@@ -1,4 +1,5 @@
 VERSION ?= git-$(shell git rev-parse --short HEAD)
-DEIS_REGISTRY ?= quay.io/
+DEV_REGISTRY ?= quay.io/
+DEIS_REGISTRY ?= ${DEV_REGISTRY}
 IMAGE_PREFIX ?= deis
 IMAGE := ${DEIS_REGISTRY}${IMAGE_PREFIX}/${SHORT_NAME}:${VERSION}
